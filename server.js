@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-require('/app/routes/user.routes.js')(app);
+require('./app/routes/user.routes.js')(app);
 
 app.listen(3000, function () {
   console.log('Listening on port 3000')
