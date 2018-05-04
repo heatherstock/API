@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+app.set('view engine', "ejs");
+
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(bodyParser.json())
@@ -21,7 +23,7 @@ mongoose.connect(dbConfig.url)
 });
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.render('index');
 })
 
 require('./app/routes/user.routes.js')(app);
@@ -30,4 +32,4 @@ app.listen(3000, function () {
   console.log('Listening on port 3000')
 })
 
-// app.set('view engine', "ejs"); keep for later
+
