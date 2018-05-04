@@ -22,7 +22,8 @@ exports.findAll = (req, res) => {
 
   User.find()
   .then(users => {
-    res.send(users);
+    // res.send(users);
+    res.render('list')
   }).catch(err => {
     res.status(500).send({
       message: err.message || "An error occured while retrieving the user"
@@ -87,7 +88,7 @@ exports.delete = (req, res) => {
         message: "User with id " + req.params.userId + " not found"
       });
     }
-    res.send({message: "User deleted"});
+    res.send({ message: "User deleted" });
   }).catch(err => {
     if(err.kind === 'ObjectId') {
       return res.status(404).send({
