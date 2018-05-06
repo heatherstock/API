@@ -6,7 +6,16 @@
   </head>
   <body>
     <h1>List of Users</h1>
-    
+
+    <ul>
+      <% for(let i = 0; i < users.length; i++){ %>
+        <li>
+          <%= users[i].forename %> <%= users[i].surname %> -- 
+          <%= users[i].email %> -- <%= users[i].id %> -- 
+          <%= users[i].date %>
+        </li>
+      <% } %>
+    </ul>
 
     <a id="index" href="/">Back</a>
 
