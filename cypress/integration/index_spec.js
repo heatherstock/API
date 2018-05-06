@@ -17,8 +17,12 @@ describe('index.ejs', function() {
     cy.get('#input-email').type('johnsmith@test.com')
   })
 
+  it('allows user to be added to the database', function() {
+    cy.get('#add-user').click()
+  })
+
   it('has button to view users', function() {
     cy.get('#view-users').click()
-    cy.get('title').contains('List of Users')
+    cy.get('body').contains('John Smith')
   })
 })

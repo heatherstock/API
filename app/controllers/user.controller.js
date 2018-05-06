@@ -10,7 +10,7 @@ exports.create = (req, res) => {
 
   user.save()
   .then(data => {
-    res.send(data);
+    res.redirect('/')
   }).catch(err => {
     res.status(500).send({
       message: err.message || "An error occured while creating the user"

@@ -12,10 +12,6 @@ describe('list.ejs', function() {
     cy.get('h1').contains('List of Users')
   })
 
-  it('shows a list of users in the database', function() {
-    cy.get('body').contains('John')
-  })
-
   it('has button to return to index.ejs', function() {
     cy.get('#index').click()
     cy.get('title').contains('Web Development API Task - Heather Stock')
