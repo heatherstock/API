@@ -7,6 +7,26 @@
   <body>
     <h1>View User</h1>
 
+    <form action="/users/<%= user._id %>" method="post">
+
+      <div class="form-element">
+        <label>Forename</label>
+        <input id="input-forename" type="text" name="forename" value="<%= user.forename %>">
+      </div>
+
+      <div class="form-element">
+        <label>Surname</label>
+        <input id="input-surname" type="text" name="surname" value="<%= user.surname %>">
+      </div>
+        
+      <div class="form-element">
+        <label>Email</label>
+        <input id="input-email" type="email" name="email" value="<%= user.email %>">
+      </div>
+
+      <button type="submit" id="update">Update User</button>
+    </form>
+
     <ul>
       <li><%= user.forename %></li>
       <li><%= user.surname %></li>

@@ -17,6 +17,13 @@ describe('list.ejs', function() {
     cy.get('title').contains('View User')
   })
 
+  it('has a button to edit user details', function() {
+    cy.visit('http://localhost:3000')
+    cy.get('#view-all').click()
+    cy.get('#edit-user').click()
+    cy.get('title').contains('Edit User')
+  })
+
   it('has button to return to index.ejs', function() {
     cy.visit('http://localhost:3000')
     cy.get('#view-all').click()

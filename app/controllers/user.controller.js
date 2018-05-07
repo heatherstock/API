@@ -69,7 +69,9 @@ exports.update = (req, res) => {
         message: "User with id " + req.params.userId + " not found"
       });
     }
-    res.send(user);
+    res.render('view_user', { 
+      user: user
+    });
   }).catch(err => {
     if(err.kind === 'ObjectId') {
       return res.status(404).send({

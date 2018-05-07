@@ -8,7 +8,7 @@ module.exports = (app) => {
 
   app.get('/users/:userId', users.findOne);
 
-  app.put('/users/:userId', users.update);
+  app.post('/users/:userId', users.update);
 
   app.delete('/users/:userId', users.delete);
 }

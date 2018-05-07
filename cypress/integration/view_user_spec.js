@@ -18,4 +18,17 @@ describe('view_user.ejs', function() {
   it('has h1 "View User"', function() {
     cy.get('h1').contains('View User')
   })
+
+  it('displays users details', function() {
+    cy.get('body').contains('johndoe@test.com')
+  })
+
+  it('allows user details to be changed', function() {
+    cy.get('#input-forename').clear()
+    cy.get('#input-forename').type('Harry')
+  })
+
+  it('allows new information to be added to the database', function() {
+    cy.get('#update').click()
+  })
 })
