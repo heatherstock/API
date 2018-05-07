@@ -31,5 +31,8 @@ describe('view_user.ejs', function() {
 
   it('allows new information to be added to the database', function() {
     cy.get('#update').click()
+    cy.get('body').contains('Harry')
   })
+
+
 })
