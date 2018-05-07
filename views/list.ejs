@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>List of Users</title>
+  </head>
+  <body>
+    <h1>List of Users</h1>
+
+    <ul>
+      <% for(let i = 0; i < users.length; i++){ %>
+        <li>
+          <strong><%= users[i].surname %>, <%= users[i].forename %></strong>
+          <a href="/users/<%= users[i]._id %>/edit" id="edit-user">View / edit user</a>
+          <form action="/users/<%= users[i]._id %>" method="post">
+            <button type="submit" id="delete-user">Delete User</button>
+          </form>
+        </li>
+      <% } %>
+      </ul>
+
+    <a id="index" href="/">Add more users</a>
+
+  </body>
+</html>
