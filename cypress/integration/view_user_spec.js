@@ -34,5 +34,16 @@ describe('view_user.ejs', function() {
     cy.get('body').contains('Harry')
   })
 
+  it('has button to return to add user page', function() {
+    cy.get('#index').click()
+    cy.get('title').contains('Web Development API Task - Heather Stock')
+  })
 
+  it('has button to return to view list of all users', function() {
+    cy.visit('http://localhost:3000')
+    cy.get('#view-all').click()
+    cy.get('#edit-user').click()
+    cy.get('#view-all').click()
+    cy.get('title').contains('List of Users')
+  })
 })

@@ -24,7 +24,7 @@ describe('list.ejs', function() {
     cy.get('title').contains('View / Edit User')
   })
 
-  it('has button to return to index.ejs', function() {
+  it('has button to return to add users page', function() {
     cy.visit('http://localhost:3000')
     cy.get('#view-all').click()
     cy.get('#index').click()
