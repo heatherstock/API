@@ -11,7 +11,10 @@
       <% for(let i = 0; i < users.length; i++){ %>
         <li>
           <strong><%= users[i].surname %>, <%= users[i].forename %></strong>
-          <a href="/users/<%= users[i]._id %>" id="edit-user">View / edit user</a>
+          <a href="/users/<%= users[i]._id %>/edit" id="edit-user">View / edit user</a>
+          <form action="/users/<%= users[i]._id %>" method="post">
+            <button type="submit" id="delete-user">Delete User</button>
+          </form>
         </li>
       <% } %>
       </ul>

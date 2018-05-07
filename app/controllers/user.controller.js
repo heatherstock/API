@@ -86,14 +86,14 @@ exports.update = (req, res) => {
 
 exports.delete = (req, res) => {
 
-  User.findByIdAndRemove(req.params.noteId)
+  User.findByIdAndRemove(req.params.userId)
   .then(user => {
     if(!user) {
       return res.status(404).send({
         message: "User with id " + req.params.userId + " not found"
       });
     }
-    res.send({ message: "User deleted" });
+    res.redirect('/users');
   }).catch(err => {
     if(err.kind === 'ObjectId') {
       return res.status(404).send({
