@@ -4,19 +4,20 @@ describe('view_user.ejs', function() {
     cy.get('#input-forename').type('John')
     cy.get('#input-surname').type('Doe')
     cy.get('#input-email').type('johndoe@test.com')
+    cy.get('#add-user').click()
     cy.get('#view-all').click()
   })
 
   it('successfully loads', function() {
-    cy.get('#view-user').click()
+    cy.get('#edit-user').click()
   })
 
   it('has the title "View User"', function() {
-    cy.get('title').contains('View User')
+    cy.get('title').contains('View / Edit User')
   })
 
   it('has h1 "View User"', function() {
-    cy.get('h1').contains('View User')
+    cy.get('h1').contains('View / Edit User')
   })
 
   it('displays users details', function() {
