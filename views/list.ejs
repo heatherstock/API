@@ -10,12 +10,12 @@
     <ul>
       <% for(let i = 0; i < users.length; i++){ %>
         <li>
-          <%= users[i].forename %> <%= users[i].surname %> -- 
+          <strong><%= users[i].surname %>, <%= users[i].forename %></strong> -- 
           <%= users[i].email %> -- <%= users[i].id %> -- 
           <%= users[i].date %>
         </li>
       <% } %>
-    </ul>
+      </ul>
 
     <a id="index" href="/">Back</a>
 
