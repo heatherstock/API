@@ -10,7 +10,7 @@ exports.create = (req, res) => {
 
   user.save()
   .then(data => {
-    res.redirect('/')
+    res.send(data);
   }).catch(err => {
     res.status(500).send({
       message: err.message || "An error occured while creating the user"
@@ -22,9 +22,7 @@ exports.findAll = (req, res) => {
 
   User.find()
   .then(users => {
-    res.render('list', { 
-      users: users
-    });
+    res.send(users);
   }).catch(err => {
     res.status(500).send({
       message: err.message || "An error occured while retrieving the user"
@@ -41,9 +39,7 @@ exports.findOne = (req, res) => {
         message: "User with id " + req.params.userId + " not found"
       });
     }
-    res.render('view_user', { 
-      user: user
-    });
+    res.send(user);
   }).catch(err => {
     if(err.kind === 'ObjectId') {
       return res.status(404).send({
@@ -69,9 +65,7 @@ exports.update = (req, res) => {
         message: "User with id " + req.params.userId + " not found"
       });
     }
-    res.render('view_user', { 
-      user: user
-    });
+    res.send(user);
   }).catch(err => {
     if(err.kind === 'ObjectId') {
       return res.status(404).send({
@@ -93,7 +87,7 @@ exports.delete = (req, res) => {
         message: "User with id " + req.params.userId + " not found"
       });
     }
-    res.redirect('/users');
+    res.send({ message: "User deleted" })
   }).catch(err => {
     if(err.kind === 'ObjectId') {
       return res.status(404).send({

@@ -23,7 +23,7 @@ mongoose.connect(dbConfig.url)
 });
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.send('Hello world');
 })
 
 require('./app/routes/user.routes.js')(app);
