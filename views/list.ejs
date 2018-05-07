@@ -10,9 +10,8 @@
     <ul>
       <% for(let i = 0; i < users.length; i++){ %>
         <li>
-          <strong><%= users[i].surname %>, <%= users[i].forename %></strong> -- 
-          <%= users[i].email %> -- <%= users[i].id %> -- 
-          <%= users[i].date %>
+          <strong><%= users[i].surname %>, <%= users[i].forename %></strong>
+          <a href="/users/<%= users[i]._id %>" id="view-user">View user</a>
         </li>
       <% } %>
       </ul>

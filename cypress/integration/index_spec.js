@@ -22,7 +22,7 @@ describe('index.ejs', function() {
   })
 
   it('has button to view users', function() {
-    cy.get('#view-users').click()
-    cy.get('body').contains('John Smith')
+    cy.get('#view-all').click()
+    cy.get('body').contains('Smith, John')
   })
 })
