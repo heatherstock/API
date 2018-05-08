@@ -2,6 +2,9 @@
   "name": "web_dev_api_task",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "8.9.4"
+  },
   "main": "server.js",
   "scripts": {
     "cypress": "cypress open",
