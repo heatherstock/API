@@ -14,7 +14,7 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(dbConfig.MONGODB_URI || dbConfig.url)
+mongoose.connect(process.env.MONGODB_URI || dbConfig.url)
 .then (() => {
   console.log("Successfully connected to the database");
 }).catch(err => {
@@ -28,8 +28,8 @@ app.get('/', (req, res) => {
 
 require('./app/routes/user.routes.js')(app);
 
-app.listen(3000, function () {
-  console.log('Listening on port 3000')
+app.listen(process.env.PORT || 3000, function () {
+  console.log('Listening on port')
 })
 
 
