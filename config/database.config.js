@@ -1,4 +1,4 @@
 module.exports = {
   url: 'mongodb://localhost:27017/WebDevAPI',
-  MONGOLAB_URI: 'mongodb://heroku_d9hjh1qk:heroku_d9hjh1qk@ds117730.mlab.com:17730/heroku_d9hjh1qk'
+  MONGODB_URI: 'mongodb://heroku_d9hjh1qk:gddvh859k63q2j0q8nspmg2neh@ds117730.mlab.com:17730/heroku_d9hjh1qk'
 }
