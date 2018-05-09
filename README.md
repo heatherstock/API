@@ -89,7 +89,7 @@ Notice the user's data has been updated.
 Finally, copy and paste a users ID after the url, remember to separate with a "/" `localhost:3000/users/:id`
 Choose `DELETE` `send`
 
-You can now emove the `/:id` after `localhost:3000/users` 
+You can now remove the `/:id` after `localhost:3000/users` 
 Notice the user's data has been deleted (not shown).
 
 ### Running Tests
@@ -107,7 +107,7 @@ Run `node server.js` to launch app
 NOTE: You must have an empty database to run the tests. Please make sure you remove all records or drop the collection.
 
 
-#### A note about the branches: 
+### A note about the branches: 
 
 The files on the 'master' branch include a views folder annd a cypress testing suite folder for behaviour driven development of implement a front-end to the API. This is what has been deployed to heroku. 
 
@@ -126,7 +126,7 @@ The files in the 'docker' branch include some Docker files which I have tried to
 I decided to use Node.js, Express and Mongodb to build the API, as this was the stack used during my final project at Maker's Academy. This meant that I could embed the knowledge learned during the project and build upon the areas we struggled with and improve my knowledge at the same time. For example, that app definitely flouted the Single Responsibilty Principle by not encapsulating the routes and controllers. 
 
 Therefore I did a more research into the conventions of Node.js and Express in order to better set out the routes and controllers. 
-I also decidedd to use all three MVC components. This way I would also have practice linking the back-end to the front-end, something I have not spent as much time as I wanted to during Makers Academy. 
+I also decided to use all three MVC components. This way I would have practice linking the back-end to the front-end, something I did not spent as much time as I wanted to during Makers Academy. 
 
 Since I was implementing front-end, I chose to use behaviour driven development using Cypress. 
 
@@ -137,13 +137,13 @@ Since I was implementing front-end, I chose to use behaviour driven development 
 - Make very simple view files using BDD to implement the functionality of the back-end via the front-end. 
 - Deploy with Heroku and mLab. 
 
-The development of the back-end was surprisingly easy after I had spent time researching my areas of ignorance I had noted down before I started. I also had the benefit of learning from the mistake we made in our last project. However, I could not find a simple way of test driving the development. Therefore I used Cypress to allow me to test drive the API from a user perspective through the browser, with the back-end already set up. 
+The development of the back-end was surprisingly easy after I had spent time researching my areas of ignorance I had noted down before I started. I also had the benefit of learning from the mistakes we made in our last project. However, I could not find a simple way of test driving the development. Therefore I used Cypress to allow me to test drive the API from a user perspective through the browser, with the back-end already set up. 
 
-I originally used GET, POST, PUT and DELETE HTTP methods in my routes, but soon found that PUT and DELETE are not supported by HTML, and so changed them both to POST in order of the API to work in the browser. This did not impact the functionality of the API, but I decided to make a branch here and keep the original methods intact, for clear use with Postman. 
+I originally used GET, POST, PUT and DELETE HTTP methods in my routes, but soon found that PUT and DELETE are not supported by HTML, and so changed them both to POST in order for the API to work in the browser. This did not impact the functionality of the API, but I decided to make a branch here and keep the original methods intact, for clear use with Postman. 
 
 Another change I made was in the schema, to use Date.now rather than timestamps. Although timestamps has an 'updatedAt' value, I decided the simplicity of Date.now matched the attributes listed in the task. 
 
-Deploying to Heroku wasn't as easy as I was expecting. I put this down to lack of experience using Heroku, and also not using mLab before, to host the database. For example, I spent time uninstalling and installing a downgraded version of mongodb, as much of the online literature and my error messages pointed to incompatible versions of the mongo shell and server. After thoroughly going through the heroku logs, I found the problem was not using `app.listen(process.env.PORT)`. This is an important learning curve, as it comes down to my team at Makers being so focussed on the product we were building, we didn't take the time to sit down with the person who deployed the app and ask him to share his knowledge with us. 
+Deploying to Heroku wasn't as easy as I was expecting. I put this down to lack of experience using Heroku and also never using mLab to host the database. For example, I spent time uninstalling and installing a downgraded version of mongodb, as much of the online literature and my error messages pointed to incompatible versions of the mongo shell and server. After thoroughly going through the heroku logs, I found the problem was not using `app.listen(process.env.PORT)`. This is an important learning curve, as it comes down to my team at Makers being so focussed on the product we were building, we didn't take the time to sit down with the person who deployed the app and ask him to share his knowledge with us. 
 
 ### Blockers:
 
@@ -169,9 +169,9 @@ I would like to look into test driving an API like this in more detail and how m
 - Don't bite off more than you can chew
 - Two heads are better than one (even when the second head is a rubber duck)
 
-When working together as a team, the team should be more than just a sum of it's parts. To achieve this, it's not only ideas that should be shared within the team, but knowledge. It's no use if one of the team knows everything about xyz if he then gets hit by a bus (hypothetically speaking). I definitely learned this the hard way with deploying to Heroku. Such a seemingly simple thing confounded me for a long time, because I didn't take the time to ask my team mate to share his experience with me at the time. 
+When working together as a team, the team should be more than just a sum of it's parts. To achieve this, it's not only ideas that should be shared within the team, but knowledge. It's no use if one of the team knows everything about xyz if he then gets hit by a bus (hypothetically speaking). I definitely learned this the hard way with deploying to Heroku. Such a seemingly simple thing confounded me for a long time, because I didn't take the time to ask my team mate to share his experience with me at the time. This meant my individual knowledge wasn't as up to scratch as I expected it to be.
 
 What added to this stress was 'rushing' so I could have time to create a Dockerfile, something I had never attempted before. I like a challenge, and I'm glad I tried to make the Dockerfile. I'm also glad I've decided to leave it for another day. 
 
-What solved the issue was taking five minutes to everything to a very patient boyfriend who knows nothing about "Rocoku". 
+What solved the Heroku issue in the end was taking five minutes to explain everything to a very patient boyfriend who knows nothing about "Rocoku". 
 
