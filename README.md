@@ -21,7 +21,7 @@ Click `Update User` (email address changed from google to gmail)
 View the updated details. 
 
 ![alt text](assets/browser_mlab.png)
-![alt text](assets/mLab.png)
+![alt text](assets/mlab.png)
 
 Users are updated to the mLab database. 
 
